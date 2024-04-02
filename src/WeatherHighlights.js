@@ -1,6 +1,6 @@
 import React from "react";
 
-function WeatherHighlights({ weatherData }) {
+function WeatherHighlights({ weatherData }) { // props destructuring
   if (!weatherData || !weatherData.main || !weatherData.visibility) {
     return null; // Render nothing if data is not available yet
   }
@@ -12,7 +12,7 @@ function WeatherHighlights({ weatherData }) {
   const sunset = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString();
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-8">
+    <div className="bg-white rounded-lg shadow-md p-8 shadow-slate-400">
       {/* <h2 className="text-xl font-semibold mb-4">Today's Highlights</h2> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-10">
         <div>

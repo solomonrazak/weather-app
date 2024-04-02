@@ -1,13 +1,16 @@
-import React from 'react';
-import MainWeatherApp from './MainWeatherApp';
-
-
+import React, {useState} from "react";
+import MainWeatherApp from "./MainWeatherApp";
+import { MapDataContext } from "./MapDataContext";
 
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+
   return (
-    <div className="App">
-     <MainWeatherApp />
-    </div>
+    <MapDataContext.Provider value={{weatherData, setWeatherData}}>
+      <div className="bg-slate-100 p-5 w-screen">
+        <MainWeatherApp />
+      </div>
+    </MapDataContext.Provider>
   );
 }
 

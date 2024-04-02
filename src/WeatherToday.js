@@ -23,6 +23,8 @@ function WeatherToday({weatherData}) { // destructuring
 
   const iconCode = weatherData.weather[0].icon;
 
+  console.log(iconCode)
+
   const weatherIcon = iconCode ? (
     <img
         src={require(`../assets/${iconCode}.png`)} // Replace with actual weather icon URL or import from assets folder
@@ -34,7 +36,7 @@ function WeatherToday({weatherData}) { // destructuring
 
 
   return (
-    <div className="bg-white flex items-center rounded-md p-7">
+    <div className="bg-white flex items-center rounded-md p-7 shadow-md shadow-slate-400">
         <div>{weatherIcon}</div>
         <div className="flex flex-col space-y-4">
             <div className="flex flex-col space-y-3">
